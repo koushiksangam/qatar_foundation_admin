@@ -55,8 +55,10 @@ def create_app(config_class=Config):
 
 app = create_app()
 
+
+with app.app_context():
+    db.create_all()
+    app.logger.info("Database initialized successfully.")
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        app.logger.info("Database initialized successfully.")
     app.run(debug=True, host='0.0.0.0', port=5000)
