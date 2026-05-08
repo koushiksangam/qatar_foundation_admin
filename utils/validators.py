@@ -1,7 +1,7 @@
 import re
 from typing import List
 
-VALID_CATEGORIES = {'Technology', 'Business', 'Design', 'Marketing', 'Data Science', 'Other'}
+VALID_CATEGORIES = {'technology', 'business', 'design', 'marketing', 'data', 'other'}
 EMAIL_REGEX = re.compile(r'^[\w\.-]+@[\w\.-]+\.\w+$')
 
 def validate_email(email: str) -> bool:
